@@ -111,10 +111,6 @@ function IncidentCount() {
     setGraphTime(e.target.value);
   }
 
-  function onChangeWeek(date, dateString) {
-    console.log(date, dateString);
-    setWeekValue(date);
-  }
 
   return (
     <React.Fragment>
@@ -122,7 +118,6 @@ function IncidentCount() {
         <Col
           md={15}
           xs={24}
-          offset={mediumScreen ? 3 : 0}
           style={mediumScreen ? "" : { marginBottom: "1rem" }}
         >
           {graph()}
@@ -137,11 +132,6 @@ function IncidentCount() {
             alignItems: "center",
           }}
         >
-          <DatePicker
-            picker={graphTime}
-            value={weekValue}
-            onChange={onChangeWeek}
-          />
           <Radio.Group
             onChange={onChangeTime}
             defaultValue="week"
