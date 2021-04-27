@@ -1,0 +1,271 @@
+@use "~antd/dist/antd.css";
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  line-height: 1.5;
+  color: #24292e;
+  background-color: #fff;
+}
+
+.App {
+  background-color: pink;
+  height: 100vh;
+}
+
+#logo {
+  height: 2.5rem;
+}
+
+#logo_title {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.anticon {
+  /* font-size: 1.2rem !important; */
+  margin-right: 0 !important;
+}
+
+.ant-menu {
+  font-size: 16px;
+}
+.menu {
+  padding: 0 20px;
+  border-bottom: solid 1px #e8e8e8;
+  overflow: auto;
+  -webkit-box-shadow: 0 0 30px #f3f1f1;
+  box-shadow: 0 0 30px #f3f1f1;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.menu__logo {
+  /*width: 150px;*/
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.menu__logo a {
+  display: inline-block;
+  font-size: 20px;
+  padding: 19px 20px;
+}
+
+.menu__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.menu__container .ant-menu-item {
+  padding: 0px 5px;
+}
+
+.menu__container .ant-menu-submenu-title {
+  padding: 10px 20px;
+}
+
+.menu__container .ant-menu-item a,
+.menu__container .ant-menu-submenu-title a {
+  padding: 10px 10px;
+  font-size: 18px;
+}
+
+.menu__container .ant-menu-horizontal {
+  border-bottom: none;
+}
+
+.menu__mobile-button {
+  float: left; /*right*/
+  height: 30px;
+  /*padding: 6px;*/
+  padding-right: 1rem;
+  margin-top: 8px;
+  display: none !important;
+  /* use of important to overwrite ant-btn */
+  color: white !important;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.menu__mobile-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.menu_drawer .ant-drawer-body {
+  padding: 0 !important;
+  background-color: black;
+}
+
+/* align header of Drawer with header of page */
+.menu_drawer .ant-drawer-header {
+  padding: 14px 24px !important;
+  background-color: black;
+  border: none;
+}
+
+.menu_drawer .ant-drawer-header .ant-drawer-title {
+  color: white;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+.ant-menu-item > span {
+  font-size: 18px;
+}
+.ant-menu-submenu-title > span:nth-child(2) {
+  padding: 10px 10px;
+  font-size: 18px;
+}
+.ant-drawer-body .ant-menu-item > span:nth-child(2) {
+  padding: 10px 10px;
+}
+
+@media (max-width: 767px) {
+  .menu {
+    height: 64px;
+    /* Fixing navbar height on mobile */
+    padding: 0 0 0 20px;
+  }
+  .menu__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  .menu__mobile-button {
+    display: inline-block !important;
+  }
+  .menu_left/*,
+  .menu_right*/ {
+    display: none;
+  }
+  .menu__container .ant-menu-item,
+  .menu__container .ant-menu-submenu-title {
+    padding: 1px 20px;
+  }
+  .menu__logo a {
+    padding: 10px 20px;
+  }
+  .menu_right .ant-menu-dark.ant-menu-horizontal > .ant-menu-item {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  #logo_title {
+    display: none;
+  }
+  .menu_right .ant-menu-dark.ant-menu-horizontal > .ant-menu-item {
+    padding: 15px;
+  }
+}
+
+.ant-menu-item .ant-menu-item-icon,
+.ant-menu-submenu-title .anticon,
+.ant-menu-item .anticon {
+  min-width: 24px !important;
+  margin-right: 0 !important;
+  font-size: 24px !important;
+}
+.menu_right .ant-menu-item a {
+  padding: 0;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item,
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu {
+  vertical-align: middle;
+}
+
+/** report section **/
+div .ant-radio-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 100px;
+  margin: auto;
+}
+
+div .ant-radio-group .ant-radio-button-wrapper {
+  margin: 0.5rem 0;
+}
+
+.ant-tabs-nav {
+  margin-bottom: 0 !important;
+}
+
+[data-theme="compact"] .ant-advanced-search-form,
+.ant-advanced-search-form {
+  padding: 24px;
+  background: #fbfbfb;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}
+
+[data-theme="compact"] .ant-advanced-search-form .ant-form-item,
+.ant-advanced-search-form .ant-form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[data-theme="compact"] .ant-advanced-search-form .ant-form-item-control-wrapper,
+.ant-advanced-search-form .ant-form-item-control-wrapper {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.ant-drawer-body {
+  padding: 0 !important;
+}
+
+.ant-table-content {
+  overflow-x: auto;
+}

@@ -1,0 +1,57 @@
+.login {
+  display: flex;
+  height: 100vh;
+}
+
+.banner {
+  padding: 40px;
+  background-color: #1890ff;
+  width: inherit;
+  height: inherit;
+}
+
+.banner .name {
+  color: white;
+}
+
+.banner .logo {
+  display: flex;
+  align-items: center;
+}
+
+.banner .logo img {
+  height: 40px;
+}
+
+.banner .logo .name {
+  margin-left: 10px;
+}
+
+.panel {
+  display: flex !important;
+  height: 100%;
+  justify-content: center;
+}
+
+.panel .content {
+  padding: 20px;
+  margin: auto 50px;
+  width: 500px;
+}
+
+.panel .form {
+  margin-top: 30px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .panel .content {
+    margin: 20px;
+  }
+}

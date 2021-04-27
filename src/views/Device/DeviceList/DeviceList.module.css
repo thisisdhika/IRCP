@@ -1,0 +1,15 @@
+.addNewDeviceButton {
+  float: right;
+  margin-right: 1rem;
+}
+
+.tableStyle {
+  margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+  .addNewDeviceButton {
+    margin: 1rem 0;
+    float: left;
+  }
+}
