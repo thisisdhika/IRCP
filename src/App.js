@@ -4,7 +4,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { Layout } from "antd";
 import NavBar from "./components/NavBar/NavBar";
 import Dashboard from "./views/Dashboard";
-import Map from "./views/Map";
+import VSSystem from "./views/VSSystem";
+import Map from "./components/Map";
 import DeviceList from "./views/Device/DeviceList";
 import DeviceDetail from "./views/Device/DeviceDetail";
 import DeviceConfig from "./views/Device/DeviceConfig";
@@ -18,6 +19,8 @@ import ResetPassword from "./views/ResetPassword";
 import Profile from "./views/Profile";
 import "./app.css";
 import { authService } from "./service/auth";
+import BlankPage from "./views/BlankPage";
+import Energy from "./views/Energy";
 
 function App() {
   const authState = useSelector((state) => state.auth);
@@ -65,8 +68,11 @@ function App() {
         <PrivateRoute exact path="/report/incidents" component={Report} />
         <PrivateRoute exact path="/report/download" component={Report} />
         <PrivateRoute exact path="/profile" component={Profile} />
+        <PrivateRoute exact path="/vssystem" component={VSSystem} />
+        <PrivateRoute exact path="/energy" component={Energy} />
+        <PrivateRoute exact path="/map" component={Map} />
         <Route path="*">
-          <Redirect to="/" />
+          <BlankPage/>
         </Route>
       </Switch>
     </Suspense>
@@ -79,6 +85,8 @@ function PrivateRoute({ component, children, admin, ...rest }) {
   let auth = useSelector((state) => state.auth);
   const isAdmin = auth.role === "admin";
 
+ 
+  console.log(admin)
   return (
     <Route
       {...rest}

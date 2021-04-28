@@ -14,7 +14,7 @@ const GoogleMap = ({ children, places, ...props }) => {
     }
 
     return (
-    <div style={{ width: '100%', height: '100%' }}>
+    <div style={{ width: '80%', height: '100%' }}>
         <GoogleMapReact
           options={mapOptions} 
           bootstrapURLKeys={{

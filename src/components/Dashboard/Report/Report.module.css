@@ -1,0 +1,26 @@
+.title {
+    display: block;
+    font-size: 18px;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 0;
+    font-weight: 600;
+}
+
+@media only screen and (max-width : 567px) {
+   .title {
+     padding-left: 2rem;
+   }
+}
+
+.table {
+    padding: 2rem;
+    margin: auto;
+    display: block;
+}
+
+.table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}

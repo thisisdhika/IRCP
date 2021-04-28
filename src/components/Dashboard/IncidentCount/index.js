@@ -127,7 +127,7 @@ function IncidentCount() {
           xs={24}
           style={{
             display: "flex",
-            flexDirection: "column",
+            flexDirection: "column-reverse",
             justifyContent: "space-around",
             alignItems: "center",
           }}
@@ -148,11 +148,11 @@ function IncidentCount() {
             </Radio.Button>
           </Radio.Group>
           <Radio.Group onChange={onChangeGraph} defaultValue="bar">
-            <Radio.Button className={styles.radioButton} value="bar">
-              Bar
-            </Radio.Button>
             <Radio.Button className={styles.radioButton} value="line">
               Line
+            </Radio.Button>
+            <Radio.Button className={styles.radioButton} value="bar">
+              Bar
             </Radio.Button>
           </Radio.Group>
         </Col>

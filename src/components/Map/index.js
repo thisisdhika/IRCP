@@ -9,9 +9,9 @@ import {
   EyeFilled,
   ToolFilled,
 } from "@ant-design/icons";
-import Marker from "../../components/Marker";
-import GoogleMap from "../../components/GoogleMap";
-import TableMap from "../../components/TableMap";
+import Marker from "../Marker";
+import GoogleMap from "../GoogleMap";
+import TableMap from "../TableMap";
 import {
   defaultProps,
   initProjectOptions,

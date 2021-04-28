@@ -1,8 +1,9 @@
 import React from "react";
 import {Row, Col} from "antd";
-import {UnorderedListOutlined} from "@ant-design/icons";
 import PeopleCount from "../../components/Dashboard/PeopleCount";
+import Report from "../../components/Dashboard/Report";
 import IncidentCount from "../../components/Dashboard/IncidentCount";
+import Map from "../../components/Map";
 
 function Dashboard() {
     return (
@@ -30,21 +31,7 @@ function Dashboard() {
             </Row>
             <Row>
                 <Col md={12} xs={24}>
-                    <span
-                        style={{
-                        display: 'block',
-                        fontSize: '18px',
-                        paddingLeft: '2rem',
-                        paddingTop: '2rem',
-                        paddingBottom: '0',
-                        fontWeight: 600
-                    }}>
-                        <UnorderedListOutlined
-                            style={{
-                            paddingRight: '1rem'
-                        }}/>
-                        Report
-                    </span>
+                    <Report/>
                 </Col>
                 <Col md={12} xs={24}>
                     <PeopleCount/>
@@ -67,7 +54,8 @@ function Dashboard() {
             </Row>
             <Row>
                 <Col md={8} xs={24}>
-                    <div> Map </div>
+                    <Map/>
+                    <Map/>
                 </Col>
                 <Col md={16} xs={24}>
                     <IncidentCount/>

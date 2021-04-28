@@ -212,7 +212,7 @@ function NavBar() {
         </Modal>
         <img id="logo" src={kartax} alt="" />
         <Link id="logo_title" to="/">
-          KACSA
+          IRCP
         </Link>
       </div>
       <div className="menu__container">
@@ -221,17 +221,17 @@ function NavBar() {
         </div>
         <div className="menu_right">
           <Menu theme="dark" mode="horizontal">
-            <Menu.Item>
+            {/* <Menu.Item>
               <Badge count={5}>
                 <AlertOutlined
                   style={{ color: "white" }}
                   onClick={openSideBar}
                 />
               </Badge>
-            </Menu.Item>
+            </Menu.Item> */}
             <SubMenu
               icon={<UserOutlined />}
-              title={<span>{user.firstName}</span>}
+              title={<span style={{padding:0}}></span>}
             >
               <Menu.Item key="profile">
                 <Link to="/profile">Profile</Link>
