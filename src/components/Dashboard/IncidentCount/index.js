@@ -119,7 +119,7 @@ function IncidentCount() {
         <Col
           md={18}
           xs={24}
-          style={{padding : "2rem 0rem"}}
+          style={{padding : mediumScreen ? "2rem 0rem" : "1.3rem"}}
         >
           {graph()}
         </Col>
