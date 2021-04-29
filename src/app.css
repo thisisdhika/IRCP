@@ -223,13 +223,13 @@ body {
 div .ant-radio-group {
   display: -webkit-box;
   display: -ms-flexbox;
-  /* display: flex;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; */
-  /* max-width: 100px; */
-  /* margin: auto; */
+  flex-direction: column;
+  max-width: 100px;
+  margin: auto;
 }
 
 div .ant-radio-group .ant-radio-button-wrapper {
