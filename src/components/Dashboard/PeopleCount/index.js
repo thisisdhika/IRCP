@@ -31,6 +31,7 @@ function PeopleCount() {
                 .concat(weeklyDataPeopleCount.peopleOutCount.data),
             isGroup: true,
             xField: "date",
+            height : 200,
             yField: "count",
             seriesField: "name",
             label: {
@@ -59,6 +60,8 @@ function PeopleCount() {
                 .data
                 .concat(weeklyDataPeopleCount.peopleOutCount.data),
             xField: "date",
+            height : 200,
+
             yField: "count",
             yAxis: {
                 label: {
@@ -140,7 +143,8 @@ function PeopleCount() {
                 style={{
                 paddingTop: "1rem",
                 paddingBottom: "3rem",
-                paddingRight : "1.3rem"
+                paddingRight : "1.3rem",
+                paddingLeft : "1rem"
             }}>
                 <Col
                     md={15}
@@ -151,7 +155,7 @@ function PeopleCount() {
                     style={mediumScreen
                     ? ""
                     : {
-                        marginBottom: "1rem"
+                        marginBottom: "1rem",
                     }}>
                     {graph()}
                 </Col>
@@ -168,9 +172,10 @@ function PeopleCount() {
                         onChange={onChangeTime}
                         defaultValue="week"
                         style={mediumScreen
-                        ? null
+                        ? {flexDirection : "inherit"}
                         : {
-                            marginBottom: "1rem"
+                            marginBottom: "1rem",
+                            flexDirection : "inherit"
                         }}>
                         <Radio.Button className={styles.radioButton} value="month">
                             Month

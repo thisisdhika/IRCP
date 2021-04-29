@@ -128,7 +128,7 @@ function IncidentCount() {
           xs={24}
           style={{
             display: "flex",
-            flexDirection: "column-reverse",
+            flexDirection: mediumScreen ? "column-reverse" : "",
             justifyContent: "space-around",
             alignItems: "center",
           }}
