@@ -164,8 +164,8 @@ function PeopleCount() {
                     xs={24}
                     style={{
                     display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-around",
+                    flexDirection: mediumScreen ? "column": "inherit",
+                    justifyContent: mediumScreen ?"space-around" : "flex-start",
                     alignItems: "center"
                 }}>
                     <Radio.Group

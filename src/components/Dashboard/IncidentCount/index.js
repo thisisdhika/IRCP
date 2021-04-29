@@ -128,15 +128,16 @@ function IncidentCount() {
           xs={24}
           style={{
             display: "flex",
-            flexDirection: mediumScreen ? "column-reverse" : "",
+            flexDirection: mediumScreen ? "column-reverse" : "column",
             justifyContent: "space-around",
-            alignItems: "center",
+            alignItems: mediumScreen ? "center" : "left",
+            padding : mediumScreen ? "" : "1.3rem"
           }}
         >
           <Radio.Group
             onChange={onChangeTime}
             defaultValue="week"
-            style={mediumScreen ? null : { marginBottom: "1rem" }}
+            style={mediumScreen ? {display: "flex",flexDirection : "column"} : { marginBottom: "1rem", flexDirection: "inherit" }}
           >
             <Radio.Button className={styles.radioButton} value="week">
               Week
@@ -148,7 +149,9 @@ function IncidentCount() {
               Year
             </Radio.Button>
           </Radio.Group>
-          <Radio.Group onChange={onChangeGraph} defaultValue="bar">
+          <Radio.Group onChange={onChangeGraph} defaultValue="bar"
+          style={mediumScreen ? {display: "flex", flexDirection : "column"} : { flexDirection: "inherit" }}
+          >
             <Radio.Button className={styles.radioButton} value="line">
               Line
             </Radio.Button>
