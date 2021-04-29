@@ -2,16 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Layout, Breadcrumb, Select, Modal, Space, Button } from "antd";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import {
-  EnvironmentFilled,
-  SettingFilled,
-  EditFilled,
-  EyeFilled,
-  ToolFilled,
-} from "@ant-design/icons";
+
 import Marker from "../Marker";
 import GoogleMap from "../GoogleMap";
-import TableMap from "../TableMap";
 import {
   defaultProps,
   initProjectOptions,

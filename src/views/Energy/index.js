@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import {Row, Col, Form, DatePicker, Button} from "antd";
+import moment from "moment";
 import styles from './Energy.module.css'
 
 function Energy() {
-
+    const [weekValue,
+        setWeekValue] = useState(moment());
     const [form] = Form.useForm();
 
     const onFinish = (values) => {
         console.log("Received values of form: ", values);
     };
 
+    function onChangeWeek(date, dateString) {
+        console.log(date);
+        setWeekValue(dateString);
+    }
+
+    console.log(weekValue)
     return (
         <div
             className="site-layout-background"
@@ -51,6 +59,8 @@ function Energy() {
                         }}>
                             <DatePicker
                                 picker="month"
+                                value={weekValue}
+                                onChange={onChangeWeek}
                                 style={{
                                 width: "100%",
                                 height: "50px",
@@ -70,39 +80,66 @@ function Energy() {
                 <Row>
                     <Col span={24}>
                         <table className={styles.list}>
-                      
+
                             <tbody >
-                            <tr>
-                            <td> Last year's energy cost on the bill of this month </td>
-                            <td> HKD </td>
-                            </tr>
-                            <tr>
-                            <td> Last year's energy consumtion on the bill of this  </td>
-                            <td> KWh </td>
-                            </tr>
-                            <tr>
-                            <td> Last year's energy consumtion on the bill of this  </td>
-                            <td> KWh </td>
-                            </tr>
-                            <tr>
-                            <td> Last year's energy consumtion on the bill of this month </td>
-                            <td> KWh </td>
-                            </tr>
-                            <tr>
-                            <td> Monthly % of energy consumtion in Tennis Court  </td>
-                            <td> % </td>
-                            </tr>
-                            <tr>
-                            <td> Energy consumtion of tennis court this month </td>
-                            <td> KWh </td>
-                            </tr>
-                            <tr>
-                            <td>Energy saving this month </td>
-                            <td> KWh </td>
-                            </tr>
+                                <tr>
+                                    <td>
+                                        Last year's energy cost on the bill of this month
+                                    </td>
+                                    <td>
+                                        HKD
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Last year's energy consumtion on the bill of this
+                                    </td>
+                                    <td>
+                                        KWh
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Last year's energy consumtion on the bill of this
+                                    </td>
+                                    <td>
+                                        KWh
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Last year's energy consumtion on the bill of this month
+                                    </td>
+                                    <td>
+                                        KWh
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Monthly % of energy consumtion in Tennis Court
+                                    </td>
+                                    <td>
+                                        %
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Energy consumtion of tennis court this month
+                                    </td>
+                                    <td>
+                                        KWh
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Energy saving this month
+                                    </td>
+                                    <td>
+                                        KWh
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
-                         
+
                     </Col>
                 </Row>
                 <Row>

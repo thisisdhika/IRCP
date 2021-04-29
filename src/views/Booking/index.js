@@ -2,7 +2,7 @@ import React from "react";
 import {Row, Col} from "antd";
 
 
-function VSSystem() {
+function Booking() {
     return (
         <div
             className="site-layout-background"
@@ -24,7 +24,7 @@ function VSSystem() {
                     style={{
                     textAlign: "center"
                 }}>
-                    <h2>VS System</h2>
+                    <h2>Booking</h2>
                 </Col>
             </Row>
 
@@ -32,4 +32,4 @@ function VSSystem() {
     );
 }
 
-export default VSSystem;
+export default Booking;

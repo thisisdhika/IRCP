@@ -34,6 +34,7 @@ function IncidentCount() {
         weeklyDataIncidentCount.heavyMachinery.data,
         weeklyDataIncidentCount.peopleIntrusion.data
       ),
+      width : 100,
       isGroup: true,
       xField: "date",
       yField: "count",
@@ -114,11 +115,11 @@ function IncidentCount() {
 
   return (
     <React.Fragment>
-      <Row style={{ padding: "3rem 0" }}>
+      <Row>
         <Col
-          md={15}
+          md={18}
           xs={24}
-          style={mediumScreen ? "" : { marginBottom: "1rem" }}
+          style={{padding : "2rem 0rem"}}
         >
           {graph()}
         </Col>

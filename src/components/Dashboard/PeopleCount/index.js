@@ -139,7 +139,8 @@ function PeopleCount() {
             <Row
                 style={{
                 paddingTop: "1rem",
-                paddingBottom: "3rem"
+                paddingBottom: "3rem",
+                paddingRight : "1.3rem"
             }}>
                 <Col
                     md={15}
