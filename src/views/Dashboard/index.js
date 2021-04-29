@@ -1,11 +1,18 @@
 import React from "react";
 import {Row, Col} from "antd";
 import PeopleCount from "../../components/Dashboard/PeopleCount";
-import Report from "../../components/Dashboard/Report";
+import List from "../../components/Dashboard/List";
 import IncidentCount from "../../components/Dashboard/IncidentCount";
 import Map from "../../components/Map";
 
 function Dashboard() {
+    let width = window.innerWidth;
+    let mediumScreen = false;
+
+    if (width > 767) {
+        mediumScreen = true;
+    }
+
     return (
         <div
             className="site-layout-background"
@@ -30,10 +37,10 @@ function Dashboard() {
                 </Col>
             </Row>
             <Row>
-                <Col md={12} xs={24}>
-                    <Report/>
+                <Col md={10} xs={24}>
+                    <List/>
                 </Col>
-                <Col md={12} xs={24}>
+                <Col md={14} xs={24}>
                     <PeopleCount/>
                 </Col>
             </Row>
@@ -52,7 +59,7 @@ function Dashboard() {
                     <h2>People Counting</h2>
                 </Col>
             </Row>
-            <Row>
+            <Row style={{padding: mediumScreen? "20px" : "0px", paddingBottom: "40px"}}>
                 <Col md={8} xs={24}>
                     <Map/>
                     <Map/>

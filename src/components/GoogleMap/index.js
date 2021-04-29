@@ -1,23 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import GoogleMapReact from 'google-map-react';
 
 
 const GoogleMap = ({ children, places, ...props }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-
-  const handleScreenResize = () => {
-    setWindowHeight(window.innerHeight);
-    setIsMobile(window.innerWidth <= 768);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleScreenResize);
-    return () => {
-      window.removeEventListener("resize", handleScreenResize);
-    };
-  }, []);
-
     const mapOptions = () => {
       return {
         clickableIcons: false,
@@ -30,7 +15,7 @@ const GoogleMap = ({ children, places, ...props }) => {
     }
 
     return (
-    <div style={{ width: isMobile? "100%" : '80%', height: '100%' }}>
+    <div style={{ width: "100%", height: '100%' }}>
         <GoogleMapReact
           options={mapOptions} 
           bootstrapURLKeys={{

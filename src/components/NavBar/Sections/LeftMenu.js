@@ -7,14 +7,12 @@ import {
   ThunderboltFilled,
   UnorderedListOutlined  
 } from "@ant-design/icons";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
-const SubMenu = Menu.SubMenu;
 
 function LeftMenu(props) {
-  const user = useSelector((state) => state.auth.user);
-  const isAdmin = user.role === "admin";
-
+  // const user = useSelector((state) => state.auth.user);
+  // const isAdmin = user.role === "admin";
 
   return (
     <Menu theme={"dark"} mode={props.mode}>

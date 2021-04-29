@@ -1,14 +1,12 @@
 import React, {useState} from "react";
-import {Row, Col, Radio, DatePicker} from "antd";
-import moment from "moment";
+import {Row, Col, Radio} from "antd";
 import {Column, Line} from "@ant-design/charts";
 import peopleCount from "../../../mockData/peopleCount";
 import styles from "./PeopleCount.module.css";
 import {FilePptOutlined} from "@ant-design/icons";
 
 function PeopleCount() {
-    const [graphType,
-        setGraphType] = useState("line");
+    const [graphType, ] = useState("line");
     const [graphTime,
         setGraphTime] = useState("week");
 
@@ -61,7 +59,6 @@ function PeopleCount() {
                 .concat(weeklyDataPeopleCount.peopleOutCount.data),
             xField: "date",
             height : 200,
-
             yField: "count",
             yAxis: {
                 label: {
@@ -135,7 +132,7 @@ function PeopleCount() {
                         fontWeight: 600
                     }}>
                       <FilePptOutlined style={{ paddingRight: '1rem' }}/>
-                        List
+                        Report
                     </span>
                 </Col>
             </Row>
@@ -147,10 +144,10 @@ function PeopleCount() {
                 paddingLeft : "1rem"
             }}>
                 <Col
-                    md={15}
+                    md={17}
                     xs={24}
                     offset={mediumScreen
-                    ? 3
+                    ? 1
                     : 0}
                     style={mediumScreen
                     ? ""

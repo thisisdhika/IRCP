@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import {Row, Col} from "antd";
 import {UnorderedListOutlined} from "@ant-design/icons";
-import styles from './Report.module.css'
+import styles from './List.module.css'
 
 
-function Report() {
+function List() {
 
     return (
         <React.Fragment>
@@ -19,7 +19,7 @@ function Report() {
                             style={{
                             paddingRight: '1rem'
                         }}/>
-                        Report
+                        List
                     </span>
                 </Col>
                 <Col >
@@ -47,4 +47,4 @@ function Report() {
     );
 }
 
-export default Report;
+export default List;

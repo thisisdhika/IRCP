@@ -83,9 +83,9 @@ function PrivateRoute({ component, children, admin, ...rest }) {
                 style={{ padding: 0 }}
               />
               {children ? children : <Component />}
-              {/* <Footer style={{ textAlign: "center" }}>
+              <Footer style={{ textAlign: "center" }}>
                 Karta-X Indonesia ©2021
-              </Footer> */}
+              </Footer>
             </Layout>
           </div>
         ) : (

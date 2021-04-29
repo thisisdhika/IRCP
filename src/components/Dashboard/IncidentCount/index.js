@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Row, Col, Radio, DatePicker } from "antd";
+import { Row, Col, Radio } from "antd";
 import { Column, Line } from "@ant-design/charts";
-import moment from "moment";
 import styles from "./IncidentCount.module.css";
 
 import incidentCount from "../../../mockData/incidentCount";
@@ -9,8 +8,6 @@ import incidentCount from "../../../mockData/incidentCount";
 function IncidentCount() {
   const [graphType, setGraphType] = useState("line");
   const [graphTime, setGraphTime] = useState("week");
-
-  const [weekValue, setWeekValue] = useState(moment());
 
   let width = window.innerWidth;
   let mediumScreen = false;
@@ -29,12 +26,13 @@ function IncidentCount() {
 
   if (graphType === "bar") {
     configCombined = {
-      data: weeklyDataIncidentCount.noSafetyHelmet.data.concat(
-        weeklyDataIncidentCount.noReflectiveVest.data,
-        weeklyDataIncidentCount.heavyMachinery.data,
-        weeklyDataIncidentCount.peopleIntrusion.data
+      data: weeklyDataIncidentCount.peopleIn.data.concat(
+        weeklyDataIncidentCount.peopleOut.data,
+        weeklyDataIncidentCount.miniBarIn.data,
+        weeklyDataIncidentCount.miniBarOut.data
       ),
       width : 100,
+      height: mediumScreen? 350 : 150,
       isGroup: true,
       xField: "date",
       yField: "count",
@@ -50,6 +48,7 @@ function IncidentCount() {
     };
   } else if (graphType === "line") {
     configCombined = {
+      height: mediumScreen? 350 : 150,
       xField: "date",
       yField: "count",
       yAxis: {
@@ -64,11 +63,11 @@ function IncidentCount() {
       seriesField: "name",
       color: function color(_ref) {
         var name = _ref.name;
-        return name === "No Safety Helmet"
+        return name === "Field - People Count In"
           ? "#5b8ff9"
-          : name === "No Reflective Vest"
+          : name === "Field - People Count Out"
           ? "#5ad8a6"
-          : name === "Heavy Machinery"
+          : name === "Mini Bar - People Count In"
           ? "#5d7092"
           : "#f6bd16";
       },
@@ -77,22 +76,22 @@ function IncidentCount() {
 
   const graph = () => {
     if (graphTime === "week") {
-      configCombined.data = weeklyDataIncidentCount.noSafetyHelmet.data.concat(
-        weeklyDataIncidentCount.noReflectiveVest.data,
-        weeklyDataIncidentCount.heavyMachinery.data,
-        weeklyDataIncidentCount.peopleIntrusion.data
+      configCombined.data = weeklyDataIncidentCount.peopleIn.data.concat(
+        weeklyDataIncidentCount.peopleOut.data,
+        weeklyDataIncidentCount.miniBarIn.data,
+        weeklyDataIncidentCount.miniBarOut.data
       );
     } else if (graphTime === "month") {
-      configCombined.data = monthlyDataIncidentCount.noSafetyHelmet.data.concat(
-        monthlyDataIncidentCount.noReflectiveVest.data,
-        monthlyDataIncidentCount.heavyMachinery.data,
-        monthlyDataIncidentCount.peopleIntrusion.data
+      configCombined.data = monthlyDataIncidentCount.peopleIn.data.concat(
+        monthlyDataIncidentCount.peopleOut.data,
+        monthlyDataIncidentCount.miniBarIn.data,
+        monthlyDataIncidentCount.miniBarOut.data
       );
     } else if (graphTime === "year") {
-      configCombined.data = yearlyDataIncidentCount.noSafetyHelmet.data.concat(
-        yearlyDataIncidentCount.noReflectiveVest.data,
-        yearlyDataIncidentCount.heavyMachinery.data,
-        yearlyDataIncidentCount.peopleIntrusion.data
+      configCombined.data = yearlyDataIncidentCount.peopleIn.data.concat(
+        yearlyDataIncidentCount.peopleOut.data,
+        yearlyDataIncidentCount.miniBarIn.data,
+        yearlyDataIncidentCount.miniBarOut.data
       );
     }
     if (graphType === "bar") {
@@ -117,9 +116,12 @@ function IncidentCount() {
     <React.Fragment>
       <Row>
         <Col
-          md={18}
+          md={16}
           xs={24}
-          style={{padding : mediumScreen ? "2rem 0rem" : "1.3rem"}}
+          offset={mediumScreen
+            ? 2
+            : 0}
+          style={{padding : mediumScreen ? "1rem 0rem" : "1.3rem"}}
         >
           {graph()}
         </Col>
