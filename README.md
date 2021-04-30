@@ -36,4 +36,4 @@ Deploy to GCP
 
 ### `gcloud app deploy`
 
-Open [https://test-ui-development.et.r.appspot.com/](https://test-ui-development.et.r.appspot.com/) to view it in the browser.
+Open [https://ircp-dot-test-ui-development.et.r.appspot.com](https://ircp-dot-test-ui-development.et.r.appspot.com) to view it in the browser.

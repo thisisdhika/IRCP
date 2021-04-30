@@ -18,7 +18,6 @@ function Dashboard() {
             className="site-layout-background"
             style={{
             margin: "3rem auto",
-            maxWidth: "1000px",
             width: "90%"
         }}>
             <Row
@@ -37,10 +36,10 @@ function Dashboard() {
                 </Col>
             </Row>
             <Row>
-                <Col md={10} xs={24}>
+                <Col md={6} xs={24}>
                     <List/>
                 </Col>
-                <Col md={14} xs={24}>
+                <Col md={18} xs={24}>
                     <PeopleCount/>
                 </Col>
             </Row>
@@ -60,11 +59,11 @@ function Dashboard() {
                 </Col>
             </Row>
             <Row style={{padding: mediumScreen? "20px" : "0px", paddingBottom: "40px"}}>
-                <Col md={8} xs={24}>
+                <Col md={6} xs={24}>
                     <Map/>
                     <Map/>
                 </Col>
-                <Col md={16} xs={24}>
+                <Col md={18} xs={24}>
                     <IncidentCount/>
                 </Col>
             </Row>

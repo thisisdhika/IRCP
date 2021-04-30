@@ -32,7 +32,7 @@ function IncidentCount() {
         weeklyDataIncidentCount.miniBarOut.data
       ),
       width : 100,
-      height: mediumScreen? 350 : 150,
+      height: mediumScreen? 350 : 200,
       isGroup: true,
       xField: "date",
       yField: "count",
@@ -48,7 +48,7 @@ function IncidentCount() {
     };
   } else if (graphType === "line") {
     configCombined = {
-      height: mediumScreen? 350 : 150,
+      height: mediumScreen? 350 : 200,
       xField: "date",
       yField: "count",
       yAxis: {
@@ -116,7 +116,7 @@ function IncidentCount() {
     <React.Fragment>
       <Row>
         <Col
-          md={16}
+          md={17}
           xs={24}
           offset={mediumScreen
             ? 2
@@ -126,7 +126,7 @@ function IncidentCount() {
           {graph()}
         </Col>
         <Col
-          md={6}
+          md={5}
           xs={24}
           style={{
             display: "flex",

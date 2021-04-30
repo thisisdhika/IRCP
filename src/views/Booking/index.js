@@ -8,7 +8,6 @@ function Booking() {
             className="site-layout-background"
             style={{
             margin: "3rem auto",
-            maxWidth: "1000px",
             width: "90%",
             minHeight : "100vh"
         }}>

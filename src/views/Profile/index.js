@@ -70,7 +70,7 @@ function Profile() {
 
   return (
     <React.Fragment>
-      <Content style={{ margin: "auto", maxWidth: "1000px", width: "90%" }}>
+      <Content style={{ margin: "auto", width: "90%" }}>
         <Breadcrumb style={{ margin: "16px 0" }}>
           <Breadcrumb.Item>Profile</Breadcrumb.Item>
         </Breadcrumb>

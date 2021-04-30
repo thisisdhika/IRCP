@@ -46,7 +46,6 @@ function App() {
         <PrivateRoute exact path="/booking" component={Booking} />
         <PrivateRoute exact path="/light" component={Light} />
         <PrivateRoute exact path="/energy" component={Energy} />
-        <PrivateRoute exact path="/map" component={Map} />
         <Route path="*">
           <BlankPage/>
         </Route>

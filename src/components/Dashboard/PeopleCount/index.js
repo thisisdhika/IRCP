@@ -29,7 +29,7 @@ function PeopleCount() {
                 .concat(weeklyDataPeopleCount.peopleOutCount.data),
             isGroup: true,
             xField: "date",
-            height : 200,
+            height: mediumScreen? 350 : 200,
             yField: "count",
             seriesField: "name",
             label: {
@@ -58,7 +58,7 @@ function PeopleCount() {
                 .data
                 .concat(weeklyDataPeopleCount.peopleOutCount.data),
             xField: "date",
-            height : 200,
+            height: mediumScreen? 350 : 200,
             yField: "count",
             yAxis: {
                 label: {
@@ -122,7 +122,9 @@ function PeopleCount() {
     return (
         <React.Fragment>
             <Row >
-                <Col>
+                <Col offset={mediumScreen
+                    ? 1
+                    : 0}>
                     <span style={{
                         display: 'block',
                         fontSize: '18px',
@@ -147,7 +149,7 @@ function PeopleCount() {
                     md={17}
                     xs={24}
                     offset={mediumScreen
-                    ? 1
+                    ? 2
                     : 0}
                     style={mediumScreen
                     ? ""
@@ -157,7 +159,7 @@ function PeopleCount() {
                     {graph()}
                 </Col>
                 <Col
-                    md={6}
+                    md={5}
                     xs={24}
                     style={{
                     display: "flex",

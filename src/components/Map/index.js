@@ -59,6 +59,7 @@ const Map = () => {
             <div
               className={styles.columnMap}
               style={{
+                width: isMobile? "100%" : "350px",
                 height: isMobile
                   ? "150px"
                   : "180px",
