@@ -11,7 +11,7 @@
 
 @media (max-width: 767px) {
     .row {
-        padding-top: 20px;
+        padding: 20px;
     }
 
     .avatar {
