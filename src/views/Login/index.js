@@ -72,10 +72,7 @@ const Login = () => {
                 },
               ]}
             >
-              <Input
-                size="large"
-                placeholder="admin@kacsa.com / user@kacsa.com"
-              />
+              <Input size="large" placeholder="admin@irc.com / user@irc.com" />
             </Form.Item>
             <Form.Item
               label="Password"
@@ -88,7 +85,13 @@ const Login = () => {
             </Form.Item>
             <Form.Item>
               <div className={styles.buttonContainer}>
-                <Button style={{ padding:0 }} type="link" onClick={handleForgotPassword}>Forgot your password?</Button>
+                <Button
+                  style={{ padding: 0 }}
+                  type="link"
+                  onClick={handleForgotPassword}
+                >
+                  Forgot your password?
+                </Button>
                 <Button type="primary" htmlType="submit" size="large">
                   Submit
                 </Button>

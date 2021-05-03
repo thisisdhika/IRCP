@@ -11,3 +11,15 @@
     border-collapse: collapse;
 }
 
+.infoLabel {
+    display: block;
+    opacity: .9;
+    font-size: 13px;
+    text-align: right;
+}
+
+@media (max-width: 767px) {
+    .infoLabel {
+        text-align: left;
+    }
+}

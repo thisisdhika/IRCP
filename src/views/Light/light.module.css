@@ -1,0 +1,36 @@
+.tennisCourtContainer {
+  padding: 1rem;
+}
+
+.tennisCourtContainerTitle {
+  text-align: center;
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.tennisCourtContainerStatus {
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.tennisCourtContainerImage__wrapper {
+  background-color: black;
+}
+
+.tennisCourtContainerImage__wrapper img {
+  height: 100%;
+  width: 100%;
+}
+
+.tennisCourtContainerSlider__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tennisCourtContainerSlider {
+  width: 50%;
+  padding: 0 1rem;
+}
