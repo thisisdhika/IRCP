@@ -18,8 +18,21 @@
     text-align: right;
 }
 
+.body {
+    padding: 3rem 2rem
+}
+
 @media (max-width: 767px) {
     .infoLabel {
+        font-size: 11px;
         text-align: left;
+    }
+
+    .list tr {
+        padding: 20px 0;
+    }
+
+    .body {
+        padding: 2rem 1rem
     }
 }

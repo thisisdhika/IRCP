@@ -37,9 +37,7 @@ function Energy() {
                     </Col>
                 </Row>
 
-                <div style={{
-                    padding: "3rem 2rem"
-                }}>
+                <div className={styles.body}>
                     <Row >
                         <Col md={24} key={"datefrom"}>
                             <div
@@ -77,7 +75,7 @@ function Energy() {
                                     </tr>
                                     <tr>
                                         <td>
-                                            Last year's energy consumtion on the bill of this month
+                                            Last year's energy consumption on the bill of this month
                                         </td>
                                         <td>
                                             {selectedEnergy?.lastYearEnergyConsumption || 0}  KWh
@@ -85,7 +83,7 @@ function Energy() {
                                     </tr>
                                     <tr>
                                         <td>
-                                            Last year's energy consumtion on the bill of this month
+                                            Last year's energy consumption on the bill of this month
                                         </td>
                                         <td>
                                             {selectedEnergy?.currentYearEnergyCost || 0}   KWh
@@ -93,7 +91,7 @@ function Energy() {
                                     </tr>
                                     <tr>
                                         <td>
-                                            Last year's energy consumtion on the bill of this month
+                                            Last year's energy consumption on the bill of this month
                                         </td>
                                         <td>
                                             {selectedEnergy?.currentYearEnergyConsumption || 0}   KWh
@@ -101,7 +99,7 @@ function Energy() {
                                     </tr>
                                     <tr>
                                         <td>
-                                            Monthly % of energy consumtion in Tennis Court
+                                            Monthly % of energy consumption in Tennis Court
                                         </td>
                                         <td>
                                             {selectedEnergy?.monthlyEnergyConsumption || 0}  %
@@ -109,7 +107,7 @@ function Energy() {
                                     </tr>
                                     <tr>
                                         <td>
-                                            Energy consumtion of tennis court this month
+                                            Energy consumption of tennis court this month
                                         </td>
                                         <td>
                                             {selectedEnergy?.thisMonthEnergyConsumption || 0}   KWh
