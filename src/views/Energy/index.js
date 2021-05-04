@@ -47,7 +47,7 @@ function Energy() {
                                 <DatePicker
                                     picker="month"
                                     onChange={onChangeWeek}
-                                    // value={moment(weekValue)}
+                                    defaultValue={moment(weekValue)}
                                     format="MMMM YYYY"
                                     style={{
                                         width: "100%",
