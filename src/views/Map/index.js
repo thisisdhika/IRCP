@@ -252,7 +252,9 @@ const Map = () => {
           width: "90%",
         }}
       >
-        
+        <Breadcrumb className={styles.breadcrumb}>
+          <Breadcrumb.Item>Map</Breadcrumb.Item>
+        </Breadcrumb>
         <div className={styles.body}>
           {/* Body */}
           <div className={styles.rowBody}>
@@ -261,9 +263,8 @@ const Map = () => {
               className={styles.columnMap}
               style={{
                 height: isMobile
-                  ? windowHeight - 400 + "px"
-                  : windowHeight - 480 + "px",
-                width : isMobile && "100%"
+                  ? windowHeight - 200 + "px"
+                  : windowHeight - 202 + "px",
               }}
             >
               <GoogleMap
@@ -311,8 +312,125 @@ const Map = () => {
           </div>
         </div>
 
-     
-       </Content>
+        <div
+          className={styles.buttonSettingContainer}
+          onClick={handleVisibleDrawer}
+        >
+          <SettingFilled style={{ fontSize: 20, padding: 0, margin: 0 }} />
+        </div>
+
+        <div
+          className={
+            visibleDrawer
+              ? `${styles.settingPopup} ${styles.fadeIn}`
+              : `${styles.settingPopup} ${styles.fadeOut}`
+          }
+        >
+          <Space direction="vertical" style={{ width: "100%" }}>
+            <div className={styles.rowContentHeader}>
+              {/* Project dropdown */}
+              <div style={{ textAlign: "left", marginBottom: 10 }}>
+                <Select
+                  defaultValue="All"
+                  value={selectedProject || "All"}
+                  style={{ width: "100%" }}
+                  onChange={handleSelectProject}
+                >
+                  <Option value="All">Select All</Option>
+                  {projects.map((element) => (
+                    <Option key={element.id} value={element.id}>
+                      {element.label}
+                    </Option>
+                  ))}
+                </Select>
+              </div>
+
+              {/* Group dropdown */}
+              <div style={{ textAlign: "left", marginBottom: 20 }}>
+                <Select
+                  defaultValue="All"
+                  value={selectedGroup || "All"}
+                  style={{ width: "100%" }}
+                  onChange={handleSelectGroup}
+                >
+                  <Option value="All">Select All</Option>
+                  {groups &&
+                    groups.map((element) => (
+                      <Option key={element.id} value={element.id}>
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          {element.label}
+                          <div style={{ width: 30, justifyContent: "center" }}>
+                            <EnvironmentFilled
+                              style={{ fontSize: 15, color: element.color }}
+                            />
+                          </div>
+                        </div>
+                      </Option>
+                    ))}
+                </Select>
+              </div>
+            </div>
+            <TableMap
+              data={devicesTbl}
+              onRowClick={onRowClick}
+              rowSelection={rowSelection}
+            />
+          </Space>
+        </div>
+
+        {/*Modal*/}
+        <Modal
+          title="DEVICE INFORMATION"
+          centered
+          visible={visibleModal}
+          onOk={() => setVisibleModal(false)}
+          onCancel={() => setVisibleModal(false)}
+          className="modal"
+          footer={
+            <div className={styles.containerIcons}>
+              <div>
+                <Button
+                  type="primary"
+                  className={styles.iconDevice}
+                  icon={<EyeFilled />}
+                  title="View Detail"
+                  onClick={handleDeviceDetail}
+                />
+                {isAdmin && (
+                  <>
+                    <Button
+                      type="primary"
+                      className={styles.iconDevice}
+                      icon={<EditFilled />}
+                      title="Edit Device"
+                      onClick={handleDeviceEdit}
+                    />
+                    <Button
+                      type="primary"
+                      className={styles.iconDevice}
+                      icon={<ToolFilled />}
+                      title="Device configuration"
+                      onClick={handleDeviceConfig}
+                    />
+                  </>
+                )}
+              </div>
+
+              <Button type="primary" onClick={() => setVisibleModal(false)}>
+                OK
+              </Button>
+            </div>
+          }
+        >
+          {selectedDevice && fillDescription(selectedDevice)}
+        </Modal>
+      </Content>
     </React.Fragment>
   );
 };

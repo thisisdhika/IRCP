@@ -1,9 +1,8 @@
 .body {
     padding-top: 16px;
-    min-height: 150px;
+    min-height: calc(100vh - 16px - 48px - 22px - 70px - 69px + 32px + 5px);
     height: 100%;
-    overflow: hidden;
-    /* background-color: #f0f2f5; */
+    background-color: #f0f2f5;
 }
 
 .breadcrumb {

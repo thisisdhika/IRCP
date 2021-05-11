@@ -1,7 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 
-
 const GoogleMap = ({ children, places, ...props }) => {
     const mapOptions = () => {
       return {
@@ -15,7 +14,7 @@ const GoogleMap = ({ children, places, ...props }) => {
     }
 
     return (
-    <div style={{ width: "100%", height: '100%' }}>
+    <div style={{ width: '100%', height: '100%' }}>
         <GoogleMapReact
           options={mapOptions} 
           bootstrapURLKeys={{

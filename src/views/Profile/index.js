@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
+  Layout,
+  Breadcrumb,
   Row,
   Col,
   Avatar,
@@ -18,6 +20,7 @@ const layout = {
 };
 
 function Profile() {
+  const { Content } = Layout;
   const [form] = Form.useForm();
   const [isError, setIsError] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
@@ -66,121 +69,111 @@ function Profile() {
   };
 
   return (
-    <div
-            className="site-layout-background"
-            style={{
-            margin: "3rem auto",
-            paddingBottom: "1rem",
-            minHeight : "100vh",
-            maxWidth: "1000px",
-            width: "90%",
-        }}>
-            <Row
-                style={{
-                padding: "1rem 0.2rem",
-                backgroundColor: "#fbfbfb",
-                border: "1px solid #d9d9d9",
-                borderRadius: "2px"
-            }}>
-                <Col
-                    span={24}
-                    style={{
-                    textAlign: "center"
-                }}>
-                    <h2>Profile</h2>
-                </Col>
-            </Row>
-
-            <Row className={styles.row}>
-              <Col span={24}>
-                {isError && (
-                  <Alert
-                    style={{ marginBottom: 40 }}
-                    message="Error occurrence while change your data."
-                    type="error"
-                  />
-                )}
-                {isSuccess && (
-                  <Alert
-                    style={{ marginBottom: 40 }}
-                    message="Your profile successfully save"
-                    type="success"
-                  />
-                )}
-              </Col>
-              <Col
-                xs={24}
-                md={8}
-                style={{ display: "flex" }}
-                className={styles.avatar}
+    <React.Fragment>
+      <Content style={{ margin: "auto", maxWidth: "1000px", width: "90%" }}>
+        <Breadcrumb style={{ margin: "16px 0" }}>
+          <Breadcrumb.Item>Profile</Breadcrumb.Item>
+        </Breadcrumb>
+        <div
+          className="site-layout-background"
+          style={{
+            padding: 24,
+            minHeight:
+              "calc(100vh - 16px - 48px - 22px - 70px - 69px + 32px + 5px)",
+          }}
+        >
+          <Row className={styles.row}>
+            <Col span={24}>
+              {isError && (
+                <Alert
+                  style={{ marginBottom: 40 }}
+                  message="Error occurrence while change your data."
+                  type="error"
+                />
+              )}
+              {isSuccess && (
+                <Alert
+                  style={{ marginBottom: 40 }}
+                  message="Your profile successfully save"
+                  type="success"
+                />
+              )}
+            </Col>
+            <Col
+              xs={24}
+              md={8}
+              style={{ display: "flex" }}
+              className={styles.avatar}
+            >
+              <Avatar size={150} src={user.image} />
+            </Col>
+            <Col xs={24} md={16}>
+              <Form
+                {...layout}
+                form={form}
+                name="control-hooks"
+                onFinish={onFinish}
               >
-                <Avatar size={150} src={user.image} />
-              </Col>
-              <Col xs={24} md={16}>
-                <Form
-                  {...layout}
-                  form={form}
-                  name="control-hooks"
-                  onFinish={onFinish}
+                <Form.Item
+                  name="firstName"
+                  label="First Name"
+                  rules={[
+                    { required: true },
+                    {
+                      min: 3,
+                      message: "First Name must be minimum 3 characters.",
+                    },
+                  ]}
                 >
-                  <Form.Item
-                    name="firstName"
-                    label="First Name"
-                    rules={[
-                      { required: true },
-                      {
-                        min: 3,
-                        message: "First Name must be minimum 3 characters.",
-                      },
-                    ]}
-                  >
-                    <Input />
-                  </Form.Item>
-                  <Form.Item
-                    name="lastName"
-                    label="Last Name"
-                    rules={[{ required: true }]}
-                  >
-                    <Input />
-                  </Form.Item>
-                  <Form.Item
-                    name="email"
-                    label="Email"
-                    rules={[
-                      {
-                        type: "email",
-                        message: "The input is not valid E-mail!",
-                      },
-                      {
-                        required: true,
-                      },
-                    ]}
-                  >
-                    <Input />
-                  </Form.Item>
-                  <Form.Item
-                    name="company"
-                    label="Company"
-                    rules={[{ required: false }]}
-                  >
-                    <Input />
-                  </Form.Item>
-                  <Form.Item
-                    name="phoneNumber"
-                    label="Phone Number"
-                    rules={[{ required: false }]}
-                  >
-                    <Input />
-                  </Form.Item>
-                  <Form.Item {...tailLayout}>
-                    <Button type="primary" htmlType="submit">
-                      Submit
-                    </Button>
-                  </Form.Item>
-                </Form>
-              </Col>
-            </Row>
-      </div>
+                  <Input />
+                </Form.Item>
+                <Form.Item
+                  name="lastName"
+                  label="Last Name"
+                  rules={[{ required: true }]}
+                >
+                  <Input />
+                </Form.Item>
+                <Form.Item
+                  name="email"
+                  label="Email"
+                  rules={[
+                    {
+                      type: "email",
+                      message: "The input is not valid E-mail!",
+                    },
+                    {
+                      required: true,
+                    },
+                  ]}
+                >
+                  <Input />
+                </Form.Item>
+                <Form.Item
+                  name="company"
+                  label="Company"
+                  rules={[{ required: false }]}
+                >
+                  <Input />
+                </Form.Item>
+                <Form.Item
+                  name="phoneNumber"
+                  label="Phone Number"
+                  rules={[{ required: false }]}
+                >
+                  <Input />
+                </Form.Item>
+                <Form.Item {...tailLayout}>
+                  <Button type="primary" htmlType="submit">
+                    Submit
+                  </Button>
+                </Form.Item>
+              </Form>
+            </Col>
+          </Row>
+        </div>
+      </Content>
+    </React.Fragment>
   );
 }
 

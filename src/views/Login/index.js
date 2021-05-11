@@ -12,6 +12,7 @@ const Login = () => {
 
   const onSubmit = async (values) => {
     setIsError(false);
+    console.log(values);
     authService
       .login(values.email, values.password)
       .then(() => history.push("/"))
@@ -72,7 +73,10 @@ const Login = () => {
                 },
               ]}
             >
-              <Input size="large" placeholder="admin@irc.com / user@irc.com" />
+              <Input
+                size="large"
+                placeholder="admin@kacsa.com / user@kacsa.com"
+              />
             </Form.Item>
             <Form.Item
               label="Password"
